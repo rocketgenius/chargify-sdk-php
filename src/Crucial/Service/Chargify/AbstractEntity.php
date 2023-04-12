@@ -78,6 +78,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return AbstractEntity
      */
+	#[\ReturnTypeWillChange]
     public function setParam($param, $value)
     {
         $this->_params[$param] = $value;
@@ -222,6 +223,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      * @param mixed $offset
      * @param mixed $value
      */
+	#[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -238,6 +240,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return bool
      */
+	#[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->_data[$offset]);
@@ -248,6 +251,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @param mixed $offset
      */
+	#[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->_data[$offset]);
@@ -260,6 +264,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return bool
      */
+	#[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->_data[$offset]) ? $this->_data[$offset] : NULL;
@@ -274,6 +279,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return void
      */
+	#[\ReturnTypeWillChange]
     public function rewind()
     {
         reset($this->_data);
@@ -284,6 +290,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function current()
     {
         return current($this->_data);
@@ -294,6 +301,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function key()
     {
         return key($this->_data);
@@ -304,6 +312,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return mixed
      */
+	#[\ReturnTypeWillChange]
     public function next()
     {
         return next($this->_data);
@@ -314,6 +323,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return bool
      */
+	#[\ReturnTypeWillChange]
     public function valid()
     {
         return $this->current() !== FALSE;
@@ -328,6 +338,7 @@ abstract class AbstractEntity implements \ArrayAccess, \Iterator, \Countable
      *
      * @return int
      */
+	#[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->_data);
